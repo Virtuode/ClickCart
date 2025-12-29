@@ -1,0 +1,17 @@
+<div class="group bg-white rounded-[2rem] border border-gray-100 p-5 transition-all duration-500 hover:shadow-2xl hover:shadow-indigo-100 hover:-translate-y-2 flex flex-col h-full">
+  <div class="relative h-56 mb-4 rounded-2xl overflow-hidden bg-gray-50 flex items-center justify-center p-6">
+    <img [src]="product.image" [alt]="product.title" class="max-h-full object-contain mix-blend-multiply group-hover:scale-110 transition-transform duration-500">
+  </div>
+  
+  <div class="flex-grow">
+    <span class="text-[10px] font-black uppercase tracking-widest text-indigo-500">{{product.category}}</span>
+    <h3 class="font-bold text-gray-900 truncate mt-1">{{product.title}}</h3>
+  </div>
+
+  <div class="flex justify-between items-center mt-6">
+    <span class="text-xl font-black text-gray-900">${{product.price}}</span>
+    <button [routerLink]="['/products', product.id]" class="bg-indigo-600 text-white p-2 rounded-xl hover:bg-indigo-700 transition-colors">
+      <span class="material-icons text-sm">View Details</span>
+    </button>
+  </div>
+</div>
