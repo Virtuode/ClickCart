@@ -7,18 +7,24 @@ export const routes: Routes = [
     loadComponent: () => import('./pages/home/home').then((m) => m.Home),
   },
 
-  // 2. List Page (Products)
+
   {
-    path: 'products',
-    loadComponent: () => import('./pages/products/products').then((m) => m.Products),
+    path: 'patient', // Default path for Home
+    loadComponent: () => import('./pages/patient/patient').then((m) => m.Patient),
   },
 
-  // 3. Detail Page (Dynamic ID)
-  // Syntax Fix: The colon must come BEFORE the variable name ':id'
   {
-    path: 'products/:id', 
-    loadComponent: () => import('./pages/productdetail/productdetail').then((m) => m.Productdetail),
+    path: 'report', // Default path for Home
+    loadComponent: () => import('./pages/report/report').then((m) => m.Report),
   },
+
+  {
+    path: 'staff', // Default path for Home
+    loadComponent: () => import('./pages/staff/staff').then((m) => m.Staff),
+  },
+
+  
+
 
   // Fallback: Redirect unknown routes to home
   { path: '**', redirectTo: '' }

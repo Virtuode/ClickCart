@@ -1,26 +1,41 @@
-<header class="bg-white shadow-sm sticky top-0 z-50">
-  <div class="container mx-auto px-6 py-4 flex justify-between items-center">
-    <div class="text-xl font-bold text-blue-600 tracking-tight">
-      STORE<span class="text-gray-900">APP</span>
+<header class="w-72 h-full  bg-gray-900 shadow-sm fixed top-0 z-50">
+  <div class="container mx-auto ">
+    <div class="text-2xl flex justify-center font-bold text-blue-600 tracking-tight px-6 py-4">
+      Medi<span class="text-white">Cure</span>
     </div>
 
-    <nav>
-      <ul class="flex space-x-8">
-        <li>
-          <a routerLink="/home" 
-             routerLinkActive="text-blue-600 border-b-2 border-blue-600" 
-             class="pb-1 text-gray-600 hover:text-blue-500 transition-all font-medium">
-             Home
-          </a>
-        </li>
-        <li>
-          <a routerLink="/products" 
-             routerLinkActive="text-blue-600 border-b-2 border-blue-600" 
-             class="pb-1 text-gray-600 hover:text-blue-500 transition-all font-medium">
-             Products
-          </a>
-        </li>
+    <div class="">
+      <nav>
+        <ul class="">
+          <li class="flex px-6 py-3 space-x-3 hover:bg-gray-800">
+            <mat-icon class="text-white">space_dashboard</mat-icon>
+            <a routerLink="/" class="text-white font-medium">Dashboard</a>
+          </li>
+
+          <li class="flex px-6 py-3 space-x-3 hover:bg-gray-800">
+            <mat-icon class="text-white">supervisor_account</mat-icon>
+            <a routerLink="patient" class="text-white font-medium">Patient</a>
+          </li>
+
+          <li class="flex px-6 py-3 space-x-3 hover:bg-gray-800">
+            <mat-icon class="text-white">assignment</mat-icon>
+            <a routerLink="report" class="text-white font-medium">Report</a>
+          </li>
+
+          <li class="flex px-6 py-3 space-x-3 hover:bg-gray-800">
+            <mat-icon class="text-white">diversity_1</mat-icon>
+            <a routerLink="staff" class="text-white font-medium">Staff</a>
+          </li>
         </ul>
-    </nav>
+      </nav>
+    </div>
+
+
+    <div class="absolute bottom-0 w-full py-3 px-10">
+      <button class=" bg-red-500 text-white p-2 w-full rounded-xl">Logout</button>
+    </div>
+
+
+
   </div>
 </header>

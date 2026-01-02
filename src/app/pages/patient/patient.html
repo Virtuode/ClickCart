@@ -1,0 +1,56 @@
+<div class="">
+  <div class="flex relative z-50 items-center justify-between bg-green-500 w-full px-4 py-3">
+    <h2 class="text-3xl text-black font-semibold">Add Patient</h2>
+
+    <button class="bg-white text-green-500 px-4 py-2 rounded-xl" (click)="addPatient()">
+      Add Patient
+    </button>
+  </div>
+
+  <div [ngClass]="isAddPatient ? '-translate-y-72' : 'h-50'" class="bg-white transition-all">
+    <form class="w-full border-2">
+      <div class="grid grid-cols-2 p-10 gap-4">
+        <input
+          class="p-3 focus:ring-2 outline-none border-none ring-blue-600 rounded-xl bg-gray-200"
+          type="text"
+          placeholder="Patient Name"
+        />
+        <input
+          class="p-3 focus:ring-2 outline-none border-none ring-blue-600 rounded-xl bg-gray-200"
+          type="text"
+          placeholder="Patient Age"
+        />
+        <select
+          class="p-3 focus:ring-2 outline-none border-none ring-blue-600 rounded-xl bg-gray-200"
+        >
+          <option value="" [disabled]="true">Select Gender</option>
+          <option value="Male">Male</option>
+          <option value="Female">Female</option>
+          <option value="Other">Other</option>
+        </select>
+        <input
+          class="p-3 focus:ring-2 outline-none border-none ring-blue-600 rounded-xl bg-gray-200"
+          type="text"
+          placeholder="Patient Phone"
+        />
+        <input
+          class="p-3 focus:ring-2 outline-none border-none ring-blue-600 rounded-xl bg-gray-200"
+          type="text"
+          placeholder="Patient Email (optional)"
+        />
+
+        <div>
+          <button
+            class="absolute right-0 mx-10 ring-1 ring-green-600 bg-green-100 px-6 py-3 rounded-xl outline-none text-green-600"
+          >
+            Save Details
+          </button>
+        </div>
+      </div>
+    </form>
+
+    <div class="min-h-screen w-full border-2 flex justify-center items-center">
+      <h2 *ngIf="hideInitText">No Patient Yet</h2>
+    </div>
+  </div>
+</div>
