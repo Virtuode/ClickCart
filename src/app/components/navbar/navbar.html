@@ -1,41 +1,74 @@
-<header class="w-72 h-full  bg-gray-900 shadow-sm fixed top-0 z-50">
-  <div class="container mx-auto ">
-    <div class="text-2xl flex justify-center font-bold text-blue-600 tracking-tight px-6 py-4">
-      Medi<span class="text-white">Cure</span>
+<div
+  [ngClass]="isDrawerToggle ? 'w-20' : 'w-72'"
+  class="w-72 h-full bg-gray-900 shadow-sm fixed top-0 z-50 transition-all"
+>
+  <div class="container mx-auto">
+    <div class="w-full text-2xl flex justify-evenly font-bold tracking-tight px-2 py-4">
+      <div class="w-full flex justify-center">
+        <p *ngIf="!isDrawerToggle" class="text-blue-600 text-wrap">
+          Medi<span class="text-white">Cure</span>
+        </p>
+      </div>
+
+      <div class="flex justify-end w-min items-center px-6">
+        <mat-icon
+          class="text-white rounded-full bg-gray-600 cursor-pointer"
+          (click)="toggleSidebar()"
+          >{{ isDrawerToggle ? 'keyboard_arrow_right' : 'keyboard_arrow_left' }}</mat-icon
+        >
+      </div>
     </div>
 
     <div class="">
       <nav>
         <ul class="">
-          <li class="flex px-6 py-3 space-x-3 hover:bg-gray-800">
+          <li
+            #list
+            routerLink="/"
+            class="flex px-6 py-3 space-x-3 hover:bg-gray-800 cursor-pointer"
+          >
             <mat-icon class="text-white">space_dashboard</mat-icon>
-            <a routerLink="/" class="text-white font-medium">Dashboard</a>
+            <a *ngIf="!isDrawerToggle" class="text-white font-medium">Dashboard</a>
           </li>
 
-          <li class="flex px-6 py-3 space-x-3 hover:bg-gray-800">
+          <li
+            #list
+            routerLink="patient"
+            class="flex px-6 py-3 space-x-3 hover:bg-gray-800 cursor-pointer"
+          >
             <mat-icon class="text-white">supervisor_account</mat-icon>
-            <a routerLink="patient" class="text-white font-medium">Patient</a>
+            <a *ngIf="!isDrawerToggle" class="text-white font-medium">Patient</a>
           </li>
 
-          <li class="flex px-6 py-3 space-x-3 hover:bg-gray-800">
+          <li
+            #list
+            routerLink="report"
+            class="flex px-6 py-3 space-x-3 hover:bg-gray-800 cursor-pointer"
+          >
             <mat-icon class="text-white">assignment</mat-icon>
-            <a routerLink="report" class="text-white font-medium">Report</a>
+            <a *ngIf="!isDrawerToggle" class="text-white font-medium">Report</a>
           </li>
 
-          <li class="flex px-6 py-3 space-x-3 hover:bg-gray-800">
+          <li
+            #list
+            routerLink="staff"
+            class="flex px-6 py-3 space-x-3 hover:bg-gray-800 cursor-pointer"
+          >
             <mat-icon class="text-white">diversity_1</mat-icon>
-            <a routerLink="staff" class="text-white font-medium">Staff</a>
+            <a *ngIf="!isDrawerToggle" class="text-white font-medium">Staff</a>
           </li>
         </ul>
       </nav>
     </div>
 
-
-    <div class="absolute bottom-0 w-full py-3 px-10">
-      <button class=" bg-red-500 text-white p-2 w-full rounded-xl">Logout</button>
+    <div class="absolute bottom-0 w-full py-3 px-6">
+      @if (isDrawerToggle) {
+      <button class="w-max">
+        <mat-icon class="text-white">logout</mat-icon>
+      </button>
+      } @else {
+      <button class="bg-red-500 text-white p-2 w-full rounded-xl">Logout</button>
+      }
     </div>
-
-
-
   </div>
-</header>
+</div>
